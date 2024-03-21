@@ -2,7 +2,7 @@ import streamlit as st
 import  langchain_helper
 def main():
     st.title("DishDazzleDroid")
-    st.subtitle("Dazzling dishes at your fingertips!")
+    st.header("Dazzling dishes at your fingertips!")
 
 
 
