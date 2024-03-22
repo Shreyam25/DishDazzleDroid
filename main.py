@@ -16,6 +16,10 @@ page_element="""
   background-image: url("https://i.pinimg.com/564x/d5/08/a4/d508a4e9a881ee0bd23e09dc5d1893e4.jpg");
   background-size: cover;
 }
+ body {
+        text: black;
+    }
+
 </style>
 """
 st.markdown(page_element, unsafe_allow_html=True)
@@ -36,10 +40,12 @@ with col1:
         width: 100%;
         height: 100%;
     }}
+   
     </style>
     <div class="circular-logo">
         <img src="https://i.pinimg.com/564x/52/3b/a3/523ba330168bc643f9c52f181a0f58c5.jpg">
     </div>
+    
     """,
     unsafe_allow_html=True
 )
