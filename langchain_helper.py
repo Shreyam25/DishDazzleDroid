@@ -14,10 +14,10 @@ llm= GooglePalm(temperature=0.23,google_api_key=api)
 def get_recipe_ideas(ingredients):
     prompt = (
         "Based on the provided ingredients, suggest 3 delicious recipe ideas using only the ingredients listed. Your task is to recommend the best dishes that can be made with the available ingredients in the following format:"
-        # "\n{title}"
-        # "\n<h3>Ingredients:</h3> {ingredients}"
-        # "\n<h3>Instructions:</h3> {instructions}"
-        # "<hr> <hr>"
+        "\n{title}"
+        "\n<h3>Ingredients:</h3> {ingredients}"
+        "\n<h3>Instructions:</h3> {instructions}"
+        "<hr> <hr>"
         "Ingredients provided:"
     )
   
