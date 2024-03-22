@@ -26,7 +26,7 @@ def get_recipe_ideas(ingredients):
         
     completion = llm(
         prompt=prompt,
-        temperature=0.1,
+        temperature=0.2,
         google_api_key=api
     )
     
