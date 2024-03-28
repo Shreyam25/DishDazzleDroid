@@ -1,14 +1,12 @@
 import streamlit as st
 import langchain_helper
 import json,re
-def display_recipe(title, ingredients, instructions):
-    st.write(f"**{title}**")
-    st.write("Ingredients:")
-    for ingredient in ingredients:
-        st.write(f"* {ingredient}")
-    st.write("Instructions:")
-    for i, instruction in enumerate(instructions, start=1):
-        st.write(f"{i}. {instruction}")
+
+st.set_page_config(page_title="DishDazzleDroid",
+                   page_icon="https://i.pinimg.com/564x/dd/9d/c9/dd9dc9d83423bc037b511d73b29e6b80.jpg",
+                   layout="centered",
+                   initial_sidebar_state="collapsed")
+
 # Set background image using custom CSS
 page_element="""
 <style>
