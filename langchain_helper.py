@@ -8,7 +8,7 @@ import os
 
 load_dotenv()
 
-api = st.secrets["REPLICATE_API_TOKEN"]
+api = st.secrets["API"]
 
 llm= GooglePalm(temperature=0.01,google_api_key=api)
 
