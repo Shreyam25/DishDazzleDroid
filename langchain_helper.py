@@ -38,7 +38,7 @@ def get_recipe_ideas(ingredients):
 
 
     return response
-print(api)
+
 if __name__ == "__main__":
     recipe_ideas = get_recipe_ideas(ingredients)
     print(recipe_ideas)
