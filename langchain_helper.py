@@ -1,16 +1,29 @@
 import streamlit.web.cli as stcli
 import streamlit as st
-
-from langchain.llms import GooglePalm
-# Access the secret key from the environment
+import google.generativeai as genai
 from dotenv import load_dotenv
 import os
 
+
+
 load_dotenv()
 
-api = st.secrets["API"]
+# api = st.secrets["REPLICATE_API_TOKEN"]
+genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
 
-llm= GooglePalm(temperature=0.01,google_api_key=api)
+# llm= Palm(temperature=0.01,google_api_key=api)
+
+
+
+
+
+generation_config = {
+  "temperature": 0.9,
+  "top_p": 1,
+  "top_k": 1,
+  "max_output_tokens": 2048,
+}
+
 
 def get_recipe_ideas(ingredients):
     prompt = (
@@ -25,15 +38,12 @@ def get_recipe_ideas(ingredients):
     for ingredient in ingredients:
         prompt += f"  {ingredient},\n"
         
-    completion = llm(
-        prompt=prompt,
-        temperature=0.77,
-        google_api_key=api
-    )
-    
- 
+    model=genai.GenerativeModel("gemini-1.0-pro",generation_config=generation_config) 
+    chat = model.start_chat(history=[])
+    response = chat.send_message(p, stream=True)
 
-    return completion
+
+    return response
 print(api)
 if __name__ == "__main__":
     ingredients = ["eggs", "flour", "milk", "chocolate chips"]
