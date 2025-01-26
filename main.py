@@ -82,7 +82,7 @@ def main():
             if response:
                 st.subheader("Recommended Recipes")
                 for chunk in response:
-                    st.write(chunk.text.unsafe_allow_html=True)
+                    st.write(chunk.text,unsafe_allow_html=True)
         
             else:
                 st.write("No recipes found for the provided ingredients. Try adding different ingredients.")
