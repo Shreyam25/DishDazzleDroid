@@ -78,11 +78,11 @@ def main():
     if st.button("Get Recipes"):
         if st.session_state.ingredients_list:
             # Call function to generate recipe recommendations
-            a=  langchain_helper.get_recipe_ideas(st.session_state.ingredients_list)
-            print(a)
-            if a:
+            response=  langchain_helper.get_recipe_ideas(st.session_state.ingredients_list)
+            if response:
                 st.subheader("Recommended Recipes")
-                st.markdown(a,unsafe_allow_html=True)
+                for chunk in response:
+                    st.write(chunk.text.unsafe_allow_html=True)
         
             else:
                 st.write("No recipes found for the provided ingredients. Try adding different ingredients.")
