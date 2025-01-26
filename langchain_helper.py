@@ -9,13 +9,7 @@ import os
 load_dotenv()
 
 # api = st.secrets["REPLICATE_API_TOKEN"]
-genai.configure(api_key=st.secrets["GOOGLE_API_KEY"])
-
-# llm= Palm(temperature=0.01,google_api_key=api)
-
-
-
-
+genai.configure(api_key=st.secrets["API"])
 
 generation_config = {
   "temperature": 0.9,
