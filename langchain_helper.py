@@ -34,7 +34,7 @@ def get_recipe_ideas(ingredients):
         
     model=genai.GenerativeModel("gemini-1.0-pro",generation_config=generation_config) 
     chat = model.start_chat(history=[])
-    response = chat.send_message(p, stream=True)
+    response = chat.send_message(prompt, stream=True)
 
 
     return response
