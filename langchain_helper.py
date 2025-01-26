@@ -41,4 +41,5 @@ def get_recipe_ideas(ingredients):
 
 if __name__ == "__main__":
     recipe_ideas = get_recipe_ideas(ingredients)
-    print(recipe_ideas)
+     for chunk in recipe_ideas:
+        st.write(chunk.text)
